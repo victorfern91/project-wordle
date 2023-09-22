@@ -1,4 +1,5 @@
 import React from 'react';
+import {WORD_LENGTH} from "../../constants";
 
 function GuessInput({ handleGuessSubmit }) {
   const [guess, setGuess] = React.useState('')
@@ -23,9 +24,9 @@ function GuessInput({ handleGuessSubmit }) {
         value={guess}
         autoFocus
         required
-        minLength={5}
-        maxLength={5}
-        pattern="[a-zA-Z]{5}"
+        minLength={WORD_LENGTH}
+        maxLength={WORD_LENGTH}
+        pattern={`[a-zA-Z]{${WORD_LENGTH}}`}
         title="Must be a five letter word"
         onChange={handleInputChange}/>
     </form>
